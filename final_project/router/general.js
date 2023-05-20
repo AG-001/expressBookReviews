@@ -105,10 +105,10 @@ function getBookList(){
   // Task 11
   // Add the code for getting the book details based on ISBN (done in Task 2) using Promise callbacks or async-await with Axios.
   function getFromISBN(isbn){
-    let book_ = books[isbn];  
+    let book = books[isbn];  
     return new Promise((resolve,reject)=>{
-      if (book_) {
-        resolve(book_);
+      if (book) {
+        resolve(book);
       }else{
         reject("Unable to find book!");
       }    
@@ -121,9 +121,9 @@ function getFromAuthor(author){
     let output = [];
     return new Promise((resolve,reject)=>{
       for (var isbn in books) {
-        let book_ = books[isbn];
-        if (book_.author === author){
-          output.push(book_);
+        let book = books[isbn];
+        if (book.author === author){
+          output.push(book);
         }
       }
       resolve(output);  
@@ -135,9 +135,9 @@ function getFromTitle(title){
     let output = [];
     return new Promise((resolve,reject)=>{
       for (var isbn in books) {
-        let book_ = books[isbn];
-        if (book_.title === title){
-          output.push(book_);
+        let book = books[isbn];
+        if (book.title === title){
+          output.push(book);
         }
       }
       resolve(output);  
